@@ -70,6 +70,50 @@
     std::cout << " and " << v2;
     std::cout << " is " << v1 + v2 << std::endl;
     ```
+
+* 练习 1.7 编译一个包含不正确的嵌套注释的程序，观察编译器返回的错误信息。
+    ```
+    #include <iostream>
+
+    int main()
+    {
+        std::cout << /* "*/" */; // ❌
+        return 0;
+    }
+    ```
+    报错如下
+    ```
+    a.cpp:5:28: error: missing terminating " character
+    5 |         std::cout << /* "*/" */;
+    ``` 
+* 练习 1.8 指出下列哪些输出语句是合法的（如果有的话）：
+    ```
+    #include <iostream>
+
+    int main()
+    {
+        std::cout << "/*"; // 对
+        std::cout << "*/"; // 对
+        std::cout << /* "*/" */; // ❌
+        std::cout << /* "*/" /* "/*" "*/; // 对
+        return 0;
+    }
+    ```
+    正确答案
+    ```
+    #include <iostream>
+
+    int main()
+    {
+        std::cout << "/*";
+        std::cout << "*/";
+        std::cout << /* "*/" */";
+        std::cout << /* "*/" /* "/*" "*/;
+        return 0;
+    }
+    ```
+
+# 1.3 注释简介
   
 
   
