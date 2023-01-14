@@ -32,5 +32,44 @@
 * 标准输入 `cin`
 * 标准输出 `cout`
 
+* 练习 1.3 编写程序，在标准输出上打印Hello，World。
+    ```
+    #include <iostream>
+
+    int main()
+    {
+        std::cout << "Hello, World。";
+        return 0;
+    }
+    ```
+
+* 练习 1.4 我们的程序使用加法运算符 + 来将两个数相加。 编写程序使用乘法运算符 * ，来打印两个数的积。
+    ```
+    #include <iostream>
+
+    int main()
+    {
+        int a, b;
+        std::cin >> a >> b;
+        std::cout << a * b << std::endl; 
+        return 0;
+    }
+    ```
+
+* 练习 1.5 我们将所有输出操作放在一条很长的语句中。重写程序，将每个运算对象的打印操作放在一条独立的语句中。
+
+* 练习 1.6 解释下面程序片段是否合法
+    ```
+    std::cout << "The sum of " << v1; 
+            << " and " << v2;
+            << " is " << v1 + v2 << std::endl;
+    ```
+    正确代码
+    ```
+    std::cout << "The sum of " << v1; 
+    std::cout << " and " << v2;
+    std::cout << " is " << v1 + v2 << std::endl;
+    ```
+  
 
   
