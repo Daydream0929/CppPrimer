@@ -88,13 +88,39 @@
     ```
 
 * 练习 2.10 下列变量的初值分别是什么 ？ 
-```
-std::string global_str; // ""
-int global_int; // 0
-int main()
-{
-    int local_int;  // unknow
-    std::string local str;  // unknow
-}
-```
+    ```
+    std::string global_str; // ""
+    int global_int; // 0
+    int main()
+    {
+        int local_int;  // unknow
+        std::string local str;  // unknow
+    }
+    ```
+## 2.2.2 变量声明和定义的关系
+* 变量声明 
+* 变量定义
+    ```
+    extern int i; // 声明 i 而非定义 i
+    int j; // 声明并定义 j
+    extern double pi = 3.1416; // 定义
+    ```
 
+* 指出下面的语句是声明还是定义
+    ```
+    a.extern int ix = 1024;  // 声明ix并且定义ix
+    b.int iy;  // 定义ix
+    c.extern int iz;  // 声明iz
+    ```
+## 2.2.3 标识符
+
+* 练习 2.12 请指出下面的名字中哪些是非法的 ？
+    ```
+    a.int double = 3.14; // ❌
+    b.int _; // ❌
+    c.int catch-22; // ❌
+    d.int 1_or_2 = 1; // ❌
+    e.double Double = 3.14; // ❌
+    ```
+
+## 2.2.4 名字的作用域
