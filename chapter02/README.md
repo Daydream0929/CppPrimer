@@ -124,3 +124,61 @@
     ```
 
 ## 2.2.4 名字的作用域
+* 通过下面这段程序理解名字的作用域
+    ```
+    #include <iostream>
+
+    // 该程序仅用于说明：函数内部不宜定义与全局变量同名的新变量
+    int reused = 42; // reused拥有全局作用域
+    int main()
+    {
+        int unique = 0; // unique拥有块作用域
+        // 输出 #1：使用全局变量reused；输出 42 0
+        std::cout << reused << " " << unique << std::endl;
+        int reused = 0; // 新建局部变量reused，覆盖了全局变量reused
+        // 输出 #2：使用局部变量reused；输出 0 0
+        std::cout << reused << " " << unique << std::endl;
+        // 输出 #3： 显式地访问全局变量reused； 输出 42 0
+        std::cout << ::reused << " " << unique << std::endl;
+        return 0;
+    }
+    ```
+
+* 练习 2.13 下面的程序中 j 的值是多少？
+    ```
+    #include <iostream>
+
+    int main()
+    { 
+        int i = 100, sum = 0;
+        for (int i = 0; i != 10; ++ i ) 
+            sum += i;
+        std::cout << i << " " << sum << std::endl;
+        return 0;
+    }
+    ```
+
+* 练习 2.14 下面的程序合法吗 ？如果合法，它将输出什么 ？
+    ```
+    #include <iostream>
+
+    int main()
+    { 
+        int i = 100, sum = 0;
+        for (int i = 0; i != 10; ++ i ) 
+            sum += i;
+        std::cout << i << " " << sum << std::endl;
+        return 0;
+    }
+    ```
+
+# 2.3 复合类型
+* 复合类型（compound type）是指基于其他类型定义的类型。C++ 有几种复合类型，这里介绍俩种：引用和指针。
+
+## 2.3.1 引用
+
+## 2.3.2 指针
+
+## 2.3.3 理解复合类型的声明
+
+# 2.4 const 限定符
